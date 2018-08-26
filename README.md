@@ -1,7 +1,13 @@
 Begin with Create React App, we use this project to use
 
-* Express
-* Router 4
+* react-redux
+* react-router 4
+* react-frontload
+* react-loadable
+* react-connected-router
+* redux-thunk
+* history
+* js-cookie
 
 ----------------------------------------------------------------------
 
