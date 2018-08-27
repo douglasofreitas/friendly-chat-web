@@ -9,6 +9,11 @@ Begin with Create React App, we use this project to use
 * history
 * js-cookie
 
+---------------------------------------------------------------------
+
+Based on:
+[Tutorial Main resources to React application] https://medium.com/@cereallarceny/server-side-rendering-in-create-react-app-with-all-the-goodies-without-ejecting-4c889d7db25e
+
 ----------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

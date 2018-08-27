@@ -1,19 +1,50 @@
+// The basics
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router';
+
+// Action creators and helpers
+import { establishCurrentUser } from '../modules/auth';
+import { isServer } from '../store';
+
+import Header from './header';
+import Routes from './routes';
+
 import './app.css';
 
 class App extends Component {
+  componentWillMount() {
+    if (!isServer) {
+      this.props.establishCurrentUser();
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="app">
+        <Header
+          isAuthenticated={this.props.isAuthenticated}
+          current={this.props.location.pathname}
+        />
+        <div id="content">
+          <Routes />
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ establishCurrentUser }, dispatch);
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);
