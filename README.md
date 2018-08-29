@@ -8,6 +8,7 @@ Begin with Create React App, we use this project to use
 * redux-thunk
 * history
 * js-cookie
+* react-helmet
 
 ---------------------------------------------------------------------
 
