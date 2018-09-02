@@ -10,6 +10,10 @@ Begin with Create React App, we use this project to use
 * js-cookie
 * react-helmet
 
+Framework for UI
+
+* antd 
+
 ---------------------------------------------------------------------
 
 Based on:
